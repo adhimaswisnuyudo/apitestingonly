@@ -34,7 +34,7 @@ class Products extends CI_Controller{
                             'price'=>$price,
                             'photo'=>'default.png'
                         );
-                        $this->db->insert('products',$product,);
+                        $this->db->insert('products',$product);
                         successresponse("Produk Berhasil Ditambahkan");
                     }
                     else{
@@ -47,7 +47,7 @@ class Products extends CI_Controller{
                         'price'=>$price,
                         'photo'=>$upload['filename'],
                     );
-                    $this->db->insert('products',$product,);
+                    $this->db->insert('products',$product);
                     successresponse("Produk Berhasil Ditambahkan");
                 }
             }
