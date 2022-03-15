@@ -2,6 +2,10 @@
 
 class Auth extends CI_Controller{
 
+    function notfound(){
+        jsonoutput(404,array('status'=>'failed','message'=>'Endpoint Not Found'));
+    }
+
     function login(){
         if(checkrequesttoken() && isPost()){
             $data = json_decode(file_get_contents('php://input'));
