@@ -6,17 +6,12 @@ $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVE
 $ip = $_SERVER['SERVER_ADDR'];
 $domain = $_SERVER['HTTP_HOST'];
 $cliendaddress = $_SERVER['REMOTE_ADDR'];
-// if($cliendaddress=="127.0.0.1" || $cliendaddress =="::1"){
-//     $serveraddr = "http://localhost/arkatama/";
-// }
-// else{
-//     $serveraddr = "http://192.168.1.23/arkatama/";
-// }
+
 if($_SERVER['CI_ENV']=="development"){
     $serveraddr = "http://localhost/apitesting/";
 }
 else{
-    $serveraddr = $protocol."$domain/";
+    $serveraddr = $protocol."$domain/api/";
 }
 
 
