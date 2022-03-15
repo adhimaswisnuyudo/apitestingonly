@@ -15,7 +15,7 @@ class Authentication extends CI_Model{
                         return true;
                     }
                     else{
-                        failedresponse("Akun anda dinonaktifkan, silahkan hubungi Tim Arkatama");
+                        failedresponse("Akun anda dinonaktifkan, silahkan hubungi Tim Admin");
                         $this->Authentication->submitlog($username,"FAILED","$username Akun Nonaktif",current_url());
                     }
                 }
@@ -37,12 +37,12 @@ class Authentication extends CI_Model{
         }
         else{
             $nik = $data['idnumber'];
-            $qchecknik = "SELECT * FROM members WHERE idnumber='$nik'";
-            $checknik = $this->db->query($qchecknik);
-            if($checknik->num_rows() > 0){
-                failedresponse("NIK anda telah terdaftar. Silahkan hubungi Tim Arkatama");
-            }
-            else{
+            // $qchecknik = "SELECT * FROM members WHERE idnumber='$nik'";
+            // $checknik = $this->db->query($qchecknik);
+            // if($checknik->num_rows() > 0){
+            //     failedresponse("NIK anda telah terdaftar. Silahkan hubungi Tim Admin");
+            // }
+            // else{
                 if($data['password'] != $data['passwordconfirm']){
                     failedresponse("Password tidak sesuai");
                 }
@@ -74,7 +74,7 @@ class Authentication extends CI_Model{
                         failedresponse("Registrasi Gagal");
                     }
                 }   
-            }
+            // }
         }
     }
 
