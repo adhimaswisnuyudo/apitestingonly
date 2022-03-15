@@ -94,7 +94,7 @@ class Authentication extends CI_Model{
             'username'=>$member->username,
             // 'isaccount'=>$member->isaccount,
             'token'=>$member->token,
-            'photo'=>$member->photo,
+            'photo'=>getimageasset("user",$member->photo),
             // 'flag'=>$member->flag,
             'status'=>$member->status,
             'islogin'=>TRUE,
